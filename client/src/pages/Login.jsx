@@ -148,13 +148,13 @@ const LoginForm = () => {
               </div>
             </div>
             
-            <h1 className="text-4xl font-bold mb-2 text-gray-800 dark:text-white transition-colors">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-3 text-gray-800 dark:text-white transition-colors">
               CropIQ
             </h1>
-            <p className="text-gray-600 dark:text-gray-300 text-lg flex items-center justify-center gap-2 transition-colors">
-              <LeafIcon className="w-5 h-5 text-green-500 dark:text-green-400" />
+            <p className="text-lg sm:text-xl lg:text-2xl flex items-center justify-center gap-2 text-gray-600 dark:text-gray-300 transition-colors">
+              <LeafIcon className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 dark:text-green-400" />
               Agriculture Management Portal
-              <WheatIcon className="w-5 h-5 text-amber-500 dark:text-amber-400" />
+              <WheatIcon className="w-5 h-5 sm:w-6 sm:h-6 text-amber-500 dark:text-amber-400" />
             </p>
           </div>
 
@@ -171,10 +171,10 @@ const LoginForm = () => {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-                {error && (
+                    {error && (
                   <div className="bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-xl p-4 transition-colors">
-                    <p className="text-red-600 dark:text-red-400 text-sm flex items-center gap-2 transition-colors">
-                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center text-white text-xs">!</span>
+                    <p className="text-red-600 dark:text-red-400 text-sm sm:text-base flex items-center gap-2 transition-colors">
+                      <span className="w-4 h-4 sm:w-5 sm:h-5 bg-red-500 rounded-full flex items-center justify-center text-white text-xs sm:text-sm">!</span>
                       {error}
                     </p>
                   </div>
@@ -182,8 +182,8 @@ const LoginForm = () => {
 
                 {successMessage && (
                   <div className="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-xl p-4 transition-colors">
-                    <p className="text-green-600 dark:text-green-400 text-sm flex items-center gap-2 transition-colors">
-                      <span className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center text-white text-xs">✓</span>
+                    <p className="text-green-600 dark:text-green-400 text-sm sm:text-base flex items-center gap-2 transition-colors">
+                      <span className="w-4 h-4 sm:w-5 sm:h-5 bg-green-500 rounded-full flex items-center justify-center text-white text-xs sm:text-sm">✓</span>
                       {successMessage}
                     </p>
                   </div>
@@ -191,51 +191,51 @@ const LoginForm = () => {
 
                 {/* Welcome Message */}
                 <div className="text-center mb-6">
-                  <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2 flex items-center justify-center gap-2 transition-colors">
-                    <TractorIcon className="w-6 h-6 text-green-500 dark:text-green-400" />
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 dark:text-white mb-3 flex items-center justify-center gap-2 transition-colors">
+                    <TractorIcon className="w-6 h-6 sm:w-8 sm:h-8 text-green-500 dark:text-green-400" />
                     Welcome Back, Farmer!
                   </h2>
-                  <p className="text-gray-600 dark:text-gray-300 transition-colors">Access your agricultural dashboard</p>
+                  <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 transition-colors">Access your agricultural dashboard</p>
                 </div>
 
                 {/* Email Field */}
                 <div className="group">
-                  <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 transition-colors">
-                    <EmailIcon className="w-4 h-4 text-green-500 dark:text-green-400" />
+                  <label className="flex items-center gap-2 text-sm sm:text-base lg:text-lg font-semibold text-gray-700 dark:text-gray-300 mb-3 transition-colors">
+                    <EmailIcon className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 dark:text-green-400" />
                     Farm Email Address
                   </label>
                   <div className="relative">
                     <input
                       type="email"
-                      className="w-full px-6 py-4 pl-14 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 group-hover:bg-white dark:group-hover:bg-gray-600"
+                      className="w-full px-6 py-4 sm:py-5 pl-14 sm:pl-16 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl text-sm sm:text-base lg:text-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 group-hover:bg-white dark:group-hover:bg-gray-600"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="farmer@example.com"
                       required
                     />
                     <div className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 bg-green-100 dark:bg-green-900/50 rounded-lg">
-                      <EmailIcon className="w-5 h-5 text-green-500 dark:text-green-400" />
+                      <EmailIcon className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 dark:text-green-400" />
                     </div>
                   </div>
                 </div>
 
                 {/* Password Field */}
                 <div className="group">
-                  <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 transition-colors">
-                    <LockIcon className="w-4 h-4 text-green-500 dark:text-green-400" />
+                  <label className="flex items-center gap-2 text-sm sm:text-base lg:text-lg font-semibold text-gray-700 dark:text-gray-300 mb-3 transition-colors">
+                    <LockIcon className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 dark:text-green-400" />
                     Secure Password
                   </label>
                   <div className="relative">
                     <input
                       type={showPassword ? 'text' : 'password'}
-                      className="w-full px-6 py-4 pl-14 pr-14 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 group-hover:bg-white dark:group-hover:bg-gray-600"
+                      className="w-full px-6 py-4 sm:py-5 pl-14 sm:pl-16 pr-14 sm:pr-16 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-xl text-sm sm:text-base lg:text-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 group-hover:bg-white dark:group-hover:bg-gray-600"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Enter your password"
                       required
                     />
                     <div className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 bg-green-100 dark:bg-green-900/50 rounded-lg">
-                      <LockIcon className="w-5 h-5 text-green-500 dark:text-green-400" />
+                      <LockIcon className="w-5 h-5 sm:w-6 sm:h-6 text-green-500 dark:text-green-400" />
                     </div>
                     <button
                       type="button"
@@ -251,23 +251,23 @@ const LoginForm = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-3 shadow-lg hover:shadow-xl"
+                  className="w-full bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold py-4 sm:py-5 px-6 sm:px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-3 shadow-lg hover:shadow-xl text-base sm:text-lg lg:text-xl"
                 >
                   {isLoading ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                       Accessing Farm Portal...
                     </>
                   ) : successMessage ? (
                     <>
-                      <span className="w-5 h-5 bg-green-400 rounded-full flex items-center justify-center text-white text-xs">✓</span>
+                      <span className="w-5 h-5 sm:w-6 sm:h-6 bg-green-400 rounded-full flex items-center justify-center text-white text-sm sm:text-base">✓</span>
                       Redirecting to Dashboard...
                     </>
                   ) : (
                     <>
-                      <TractorIcon className="w-5 h-5" />
+                      <TractorIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                       Enter Farm Dashboard
-                      <ArrowRightIcon className="w-5 h-5" />
+                      <ArrowRightIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                     </>
                   )}
                 </button>
@@ -278,7 +278,7 @@ const LoginForm = () => {
                 <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent transition-colors"></div>
                 <div className="px-4 flex items-center gap-2">
                   <WheatIcon className="w-4 h-4 text-amber-500 dark:text-amber-400" />
-                  <span className="text-gray-500 dark:text-gray-400 text-sm font-medium transition-colors">Farm Network</span>
+                  <span className="text-gray-500 dark:text-gray-400 text-sm sm:text-base font-medium transition-colors">Farm Network</span>
                   <LeafIcon className="w-4 h-4 text-green-500 dark:text-green-400" />
                 </div>
                 <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent transition-colors"></div>
@@ -286,21 +286,21 @@ const LoginForm = () => {
 
               {/* Quick Access Options */}
               <div className="grid grid-cols-2 gap-4 mb-6">
-                <button className="flex items-center justify-center gap-2 py-3 bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 rounded-xl text-amber-700 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-amber-900/50 transition-all duration-300 group">
-                  <WheatIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm font-medium">Crop Monitor</span>
+                <button className="flex items-center justify-center gap-2 py-3 sm:py-4 bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 rounded-xl text-amber-700 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-amber-900/50 transition-all duration-300 group">
+                  <WheatIcon className="w-5 h-5 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
+                  <span className="text-sm sm:text-base font-medium">Crop Monitor</span>
                 </button>
-                <button className="flex items-center justify-center gap-2 py-3 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-xl text-green-700 dark:text-green-300 hover:bg-green-100 dark:hover:bg-green-900/50 transition-all duration-300 group">
-                  <SunIcon className="w-5 h-5 text-yellow-500 dark:text-yellow-400 group-hover:scale-110 transition-transform" />
-                  <span className="text-sm font-medium">Weather</span>
+                <button className="flex items-center justify-center gap-2 py-3 sm:py-4 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-xl text-green-700 dark:text-green-300 hover:bg-green-100 dark:hover:bg-green-900/50 transition-all duration-300 group">
+                  <SunIcon className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500 dark:text-yellow-400 group-hover:scale-110 transition-transform" />
+                  <span className="text-sm sm:text-base font-medium">Weather</span>
                 </button>
               </div>
 
               {/* Register Link */}
               <div className="text-center relative z-20">
                 <div className="bg-gray-50 dark:bg-gray-700 rounded-xl p-4 border border-gray-200 dark:border-gray-600 relative z-20 transition-colors">
-                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-2 flex items-center justify-center gap-1 transition-colors">
-                    <SeedIcon className="w-4 h-4 text-green-500 dark:text-green-400" />
+                  <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base mb-3 flex items-center justify-center gap-1 transition-colors">
+                    <SeedIcon className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 dark:text-green-400" />
                     New to our farm network?
                   </p>
                   <div className="mt-4">
@@ -313,11 +313,11 @@ const LoginForm = () => {
                         alert('Button clicked! Navigating to register...');
                         navigate('/register');
                       }}
-                      className="w-full bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:shadow-xl"
+                      className="w-full bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:shadow-xl text-sm sm:text-base lg:text-lg"
                       style={{ pointerEvents: 'auto', zIndex: 9999 }}
                     >
                       Join Agriculture Team
-                      <LeafIcon className="w-4 h-4" />
+                      <LeafIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                     </button>
                   </div>
                 </div>

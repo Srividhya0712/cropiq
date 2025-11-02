@@ -162,13 +162,13 @@ const Register = () => {
               </div>
             </div>
             
-            <h1 className="text-4xl font-bold mb-2 text-gray-800">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-3 text-gray-800">
               Join CropIQ
             </h1>
-            <p className="text-gray-600 text-lg flex items-center justify-center gap-2">
-              <SeedIcon className="w-5 h-5 text-green-500" />
+            <p className="text-lg sm:text-xl lg:text-2xl flex items-center justify-center gap-2 text-gray-600">
+              <SeedIcon className="w-5 h-5 sm:w-6 sm:h-6 text-green-500" />
               Start your agricultural journey
-              <WheatIcon className="w-5 h-5 text-amber-500" />
+              <WheatIcon className="w-5 h-5 sm:w-6 sm:h-6 text-amber-500" />
             </p>
           </div>
 
@@ -205,72 +205,72 @@ const Register = () => {
 
                 {/* Welcome Message */}
                 <div className="text-center mb-6">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-2 flex items-center justify-center gap-2">
-                    <SeedIcon className="w-6 h-6 text-green-500" />
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 flex items-center justify-center gap-2">
+                    <SeedIcon className="w-6 h-6 sm:w-8 sm:h-8 text-green-500" />
                     Create Farm Account
                   </h2>
-                  <p className="text-gray-600">Join our agricultural community</p>
+                  <p className="text-base sm:text-lg lg:text-xl text-gray-600">Join our agricultural community</p>
                 </div>
 
                 {/* Name Field */}
                 <div className="group">
-                  <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-3">
-                    <UserIcon className="w-4 h-4 text-blue-500" />
+                  <label className="flex items-center gap-2 text-sm sm:text-base lg:text-lg font-semibold text-gray-700 mb-3">
+                    <UserIcon className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
                     Farmer Name
                   </label>
                   <div className="relative">
                     <input
                       type="text"
-                      className="w-full px-6 py-4 pl-14 bg-gray-50 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 group-hover:bg-white"
+                      className="w-full px-6 py-4 sm:py-5 pl-14 sm:pl-16 bg-gray-50 border border-gray-300 rounded-xl text-sm sm:text-base lg:text-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 group-hover:bg-white"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Enter your full name"
                       required
                     />
                     <div className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 bg-blue-100 rounded-lg">
-                      <UserIcon className="w-5 h-5 text-blue-500" />
+                      <UserIcon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500" />
                     </div>
                   </div>
                 </div>
 
                 {/* Email Field */}
                 <div className="group">
-                  <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-3">
-                    <EmailIcon className="w-4 h-4 text-green-500" />
+                  <label className="flex items-center gap-2 text-sm sm:text-base lg:text-lg font-semibold text-gray-700 mb-3">
+                    <EmailIcon className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
                     Farm Email Address
                   </label>
                   <div className="relative">
                     <input
                       type="email"
-                      className="w-full px-6 py-4 pl-14 bg-gray-50 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 group-hover:bg-white"
+                      className="w-full px-6 py-4 sm:py-5 pl-14 sm:pl-16 bg-gray-50 border border-gray-300 rounded-xl text-sm sm:text-base lg:text-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 group-hover:bg-white"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="farmer@example.com"
                       required
                     />
                     <div className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 bg-green-100 rounded-lg">
-                      <EmailIcon className="w-5 h-5 text-green-500" />
+                      <EmailIcon className="w-5 h-5 sm:w-6 sm:h-6 text-green-500" />
                     </div>
                   </div>
                 </div>
 
                 {/* Password Field */}
                 <div className="group">
-                  <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-3">
-                    <LockIcon className="w-4 h-4 text-green-500" />
+                  <label className="flex items-center gap-2 text-sm sm:text-base lg:text-lg font-semibold text-gray-700 mb-3">
+                    <LockIcon className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
                     Create Password
                   </label>
                   <div className="relative">
                     <input
                       type={showPassword ? 'text' : 'password'}
-                      className="w-full px-6 py-4 pl-14 pr-14 bg-gray-50 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 group-hover:bg-white"
+                      className="w-full px-6 py-4 sm:py-5 pl-14 sm:pl-16 pr-14 sm:pr-16 bg-gray-50 border border-gray-300 rounded-xl text-sm sm:text-base lg:text-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 group-hover:bg-white"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Create a secure password"
                       required
                     />
                     <div className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 bg-green-100 rounded-lg">
-                      <LockIcon className="w-5 h-5 text-green-500" />
+                      <LockIcon className="w-5 h-5 sm:w-6 sm:h-6 text-green-500" />
                     </div>
                     <button
                       type="button"
@@ -284,21 +284,21 @@ const Register = () => {
 
                 {/* Confirm Password Field */}
                 <div className="group">
-                  <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-3">
-                    <LockIcon className="w-4 h-4 text-blue-500" />
+                  <label className="flex items-center gap-2 text-sm sm:text-base lg:text-lg font-semibold text-gray-700 mb-3">
+                    <LockIcon className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
                     Confirm Password
                   </label>
                   <div className="relative">
                     <input
                       type={showConfirmPassword ? 'text' : 'password'}
-                      className="w-full px-6 py-4 pl-14 pr-14 bg-gray-50 border border-gray-300 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 group-hover:bg-white"
+                      className="w-full px-6 py-4 sm:py-5 pl-14 sm:pl-16 pr-14 sm:pr-16 bg-gray-50 border border-gray-300 rounded-xl text-sm sm:text-base lg:text-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 group-hover:bg-white"
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
                       placeholder="Confirm your password"
                       required
                     />
                     <div className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 bg-blue-100 rounded-lg">
-                      <LockIcon className="w-5 h-5 text-blue-500" />
+                      <LockIcon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500" />
                     </div>
                     <button
                       type="button"
@@ -314,7 +314,7 @@ const Register = () => {
                 <button
                   onClick={handleSubmit}
                   disabled={isLoading}
-                  className="w-full bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-3 shadow-lg hover:shadow-xl"
+                  className="w-full bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold py-4 sm:py-5 px-6 sm:px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] flex items-center justify-center gap-3 shadow-lg hover:shadow-xl text-base sm:text-lg lg:text-xl"
                 >
                   {isLoading ? (
                     <>

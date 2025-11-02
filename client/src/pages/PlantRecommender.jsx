@@ -387,10 +387,10 @@ export default function PlantRecommender() {
         {/* Header with Theme Toggle */}
         <div className="flex items-start justify-between mb-6 sm:mb-8">
           <div className="flex-1">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-white mb-2 transition-colors">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-white mb-2 transition-colors">
               Plant Recommender AI
             </h1>
-            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 transition-colors">
+            <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 transition-colors">
               Discover the perfect plants for your soil using advanced AI analysis and environmental data
             </p>
           </div>
@@ -402,14 +402,14 @@ export default function PlantRecommender() {
         <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Input Panel */}
           <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 sm:p-6 transition-colors duration-300">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-white mb-4 transition-colors">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white mb-4 transition-colors">
               Soil & Climate Analysis
             </h2>
 
             <div className="space-y-4">
               {/* Location Input */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors">
+                <label className="block text-base sm:text-lg font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors">
                   Location
                 </label>
                 <div className="relative">
@@ -419,7 +419,7 @@ export default function PlantRecommender() {
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                     placeholder="Enter city, state, or country"
-                    className="w-full pl-10 pr-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                    className="w-full pl-10 pr-4 py-4 sm:py-5 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-base sm:text-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
                   />
                 </div>
               </div>
@@ -448,13 +448,13 @@ export default function PlantRecommender() {
 
               {/* Temperature Range Selection */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors">
+                <label className="block text-base sm:text-lg font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors">
                   Preferred Temperature Range
                 </label>
                 <select 
                   value={temperatureRange} 
                   onChange={(e) => setTemperatureRange(e.target.value)}
-                  className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-4 sm:py-5 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-base sm:text-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
                 >
                   <option value="">-- Select Temperature Range --</option>
                   <option value="15-20">15-20°C (Cool)</option>
@@ -467,13 +467,13 @@ export default function PlantRecommender() {
 
               {/* Season Selection */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors">
+                <label className="block text-base sm:text-lg font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors">
                   Planting Season
                 </label>
                 <select 
                   value={season} 
                   onChange={(e) => setSeason(e.target.value)}
-                  className="w-full px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-4 sm:py-5 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-base sm:text-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
                 >
                   <option value="">-- Select Season --</option>
                   <option value="Spring">Spring (Mar-May)</option>
@@ -486,14 +486,14 @@ export default function PlantRecommender() {
 
               {/* Soil Type Selection */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors">
+                <label className="block text-base sm:text-lg font-medium text-gray-700 dark:text-gray-300 mb-2 transition-colors">
                   Soil Type
                 </label>
                 <div className="relative">
                   <button
                     type="button"
                     onClick={() => setDropdownOpen(!dropdownOpen)}
-                    className="w-full flex items-center justify-between px-4 py-3 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-left text-gray-900 dark:text-white hover:border-green-400 dark:hover:border-green-500 transition-colors"
+                    className="w-full flex items-center justify-between px-4 py-4 sm:py-5 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg text-left text-base sm:text-lg text-gray-900 dark:text-white hover:border-green-400 dark:hover:border-green-500 transition-colors"
                   >
                     <span className={soilType ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400"}>
                       {soilType || "Select soil type"}
@@ -513,7 +513,7 @@ export default function PlantRecommender() {
                             {soil.emoji}
                           </div>
                           <div>
-                            <div className="text-base font-medium text-gray-900 dark:text-white transition-colors">{soil.name}</div>
+                            <div className="text-base sm:text-lg font-medium text-gray-900 dark:text-white transition-colors">{soil.name}</div>
                             <div className="text-sm text-gray-500 dark:text-gray-400 transition-colors">{soil.description}</div>
                           </div>
                         </button>

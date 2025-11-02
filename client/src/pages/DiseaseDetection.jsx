@@ -115,10 +115,10 @@ function DiseaseDetection() {
         {/* Header with Theme Toggle */}
         <div className="flex items-start justify-between mb-6 sm:mb-8">
           <div className="flex-1">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 dark:text-white mb-2 transition-colors">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-white mb-2 transition-colors">
               Plant Disease Detection
             </h1>
-            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 transition-colors">
+            <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 transition-colors">
               Upload a leaf image to detect diseases with AI-powered analysis
             </p>
           </div>
@@ -130,7 +130,7 @@ function DiseaseDetection() {
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Upload Section */}
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 sm:p-6 transition-colors duration-300">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-white mb-4 transition-colors">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white mb-4 transition-colors">
               Upload Leaf Image
             </h2>
             
@@ -152,10 +152,10 @@ function DiseaseDetection() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-lg font-medium text-gray-700 dark:text-gray-300 transition-colors">
+                    <p className="text-xl sm:text-2xl font-medium text-gray-700 dark:text-gray-300 transition-colors">
                       {image ? image.name : "Click to upload image"}
                     </p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 transition-colors">
+                    <p className="text-base sm:text-lg text-gray-500 dark:text-gray-400 transition-colors">
                       JPG, PNG, or GIF up to 10MB
                     </p>
                   </div>
@@ -215,7 +215,7 @@ function DiseaseDetection() {
 
           {/* Results Section */}
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-5 sm:p-6 transition-colors duration-300">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-white mb-4 transition-colors">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white mb-4 transition-colors">
               Detection Results
             </h2>
             

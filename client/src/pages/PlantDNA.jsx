@@ -454,7 +454,7 @@ function PlantDNA() {
             {content.map((item, idx) => (
               <span
                 key={idx}
-                className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm"
+                className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm sm:text-base"
               >
                 {item}
               </span>
@@ -466,11 +466,11 @@ function PlantDNA() {
 
     return (
       <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-200">
-        <h4 className="font-semibold text-gray-700 mb-2 flex items-center gap-2">
-          <span>{icon}</span>
-          {title}
-        </h4>
-        <p className="text-gray-600">{content}</p>
+          <h4 className="text-lg sm:text-xl font-semibold text-gray-700 mb-2 flex items-center gap-2">
+            <span>{icon}</span>
+            {title}
+          </h4>
+          <p className="text-base sm:text-lg text-gray-600">{content}</p>
       </div>
     );
   };
@@ -480,10 +480,10 @@ function PlantDNA() {
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-3">
             Plant DNA Information Database
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-lg sm:text-xl lg:text-2xl">
             Comprehensive genetic profiles and growing conditions for agricultural crops
           </p>
         </div>
@@ -492,7 +492,7 @@ function PlantDNA() {
           {/* Plant List Sidebar */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-xl shadow-lg p-6 sticky top-4">
-              <h2 className="text-xl font-bold text-gray-800 mb-4">Browse Plants</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">Browse Plants</h2>
               
               {/* Search Bar */}
               <div className="mb-4">
@@ -501,7 +501,7 @@ function PlantDNA() {
                   placeholder="Search plants..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                  className="w-full px-4 py-3 sm:py-4 border border-gray-300 rounded-lg text-base sm:text-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />
               </div>
 
@@ -517,8 +517,8 @@ function PlantDNA() {
                         : "bg-gray-50 hover:bg-gray-100 text-gray-700"
                     }`}
                   >
-                    <div className="font-semibold">{plant.commonName}</div>
-                    <div className={`text-sm ${
+                    <div className="text-base sm:text-lg font-semibold">{plant.commonName}</div>
+                    <div className={`text-sm sm:text-base ${
                       selectedPlant?.id === plant.id ? "text-green-50" : "text-gray-500"
                     }`}>
                       {plant.scientificName}
@@ -535,13 +535,13 @@ function PlantDNA() {
               <div className="bg-white rounded-xl shadow-lg p-8">
                 {/* Header */}
                 <div className="mb-6">
-                  <h2 className="text-3xl font-bold text-gray-800 mb-2">
+                  <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-2">
                     {selectedPlant.commonName}
                   </h2>
-                  <p className="text-xl text-gray-600 italic">
+                  <p className="text-2xl sm:text-3xl text-gray-600 italic">
                     {selectedPlant.scientificName}
                   </p>
-                  <div className="mt-2 text-sm text-gray-500">
+                  <div className="mt-3 text-base sm:text-lg text-gray-500">
                     Family: {selectedPlant.family} | Native to: {selectedPlant.nativeRegion}
                   </div>
                 </div>
@@ -577,7 +577,7 @@ function PlantDNA() {
                 <div className="mt-8 pt-6 border-t border-gray-200">
                   <button
                     onClick={() => navigate('/dashboard')}
-                    className="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
+                    className="px-8 py-4 bg-green-600 text-white rounded-lg text-base sm:text-lg font-medium hover:bg-green-700 transition-colors"
                   >
                     Back to Dashboard
                   </button>
@@ -586,10 +586,10 @@ function PlantDNA() {
             ) : (
               <div className="bg-white rounded-xl shadow-lg p-12 text-center">
                 <div className="text-6xl mb-4">🧬</div>
-                <h3 className="text-2xl font-bold text-gray-700 mb-2">
+                <h3 className="text-3xl sm:text-4xl font-bold text-gray-700 mb-3">
                   Select a Plant to View Details
                 </h3>
-                <p className="text-gray-500">
+                <p className="text-lg sm:text-xl text-gray-500">
                   Choose a plant from the list to see comprehensive information about its growing conditions, requirements, and characteristics.
                 </p>
               </div>
