@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ThemeToggle from '../components/ThemeToggle';
+import API_URL from '../config/api';
 
 // Agriculture-themed SVG Icons
 const EmailIcon = ({ className }) => (
@@ -87,7 +88,7 @@ const LoginForm = () => {
     setSuccessMessage('');
 
     try {
-      const res = await fetch('http://localhost:5000/api/login', {
+      const res = await fetch(`${API_URL}/api/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

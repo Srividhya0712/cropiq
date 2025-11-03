@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import ThemeToggle from "../components/ThemeToggle";
 import Webcam from "react-webcam";
+import API_URL from "../config/api";
 
 // Custom icon components to replace lucide-react
 const Camera = ({ className }) => (
@@ -299,11 +300,19 @@ export default function PlantRecommender() {
       const formData = new FormData();
       formData.append("image", imageToSend);
       try {
-        const res = await fetch("http://localhost:5000/api/detect-soil", {
+        const res = await fetch(`${API_URL}/api/detect-soil`, {
           method: "POST",
           body: formData,
         });
         const data = await res.json();
+        
+        // Check for error response (e.g., "Please upload only plant images")
+        if (!res.ok || data.error) {
+          setError(data.error || "Please upload only plant images");
+          setLoading(false);
+          return;
+        }
+        
         if (data.soil_type) {
           detectedSoilType = data.soil_type;
           console.log("Detected soil type:", detectedSoilType);
@@ -341,7 +350,7 @@ export default function PlantRecommender() {
         temperature: temperature
       });
       
-      const res = await fetch("http://localhost:5000/api/recommend-plants", {
+      const res = await fetch(`${API_URL}/api/recommend-plants`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -543,7 +552,7 @@ export default function PlantRecommender() {
                     className="w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-3"
                   >
                     <Camera className="w-5 h-5" />
-                    Use Camera to Analyze Soil
+                    Use Camera to Capture Leaf Image
                   </button>
                 )}
 
@@ -575,7 +584,7 @@ export default function PlantRecommender() {
                     <div className="text-center mb-4">
                       <img 
                         src={capturedImage} 
-                        alt="Captured soil" 
+                        alt="Captured leaf" 
                         className="rounded-lg mx-auto border-2 border-green-400 dark:border-green-500 shadow-lg w-full max-w-xs" 
                       />
                     </div>
@@ -631,24 +640,24 @@ export default function PlantRecommender() {
                           <div>
                             <p className="text-lg font-medium text-gray-700 dark:text-gray-300 transition-colors">
                               {isDragOver 
-                                ? 'Drop your image here!' 
+                                ? 'Drop your leaf image here!' 
                                 : soilImage 
                                 ? 'Image Selected ✓' 
-                                : 'Click to Upload or Drag & Drop'
+                                : 'Click to Upload or Drag & Drop Leaf Image'
                               }
                             </p>
                             <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 transition-colors">
-                              Supports JPG, PNG, GIF, WebP (Max 5MB)
+                              Upload a plant leaf image - Supports JPG, PNG, GIF, WebP (Max 5MB)
                             </p>
                           </div>
                           {!soilImage && !isDragOver && (
                             <div className="text-sm text-blue-600 dark:text-blue-400 transition-colors">
-                              📸 Camera mode recommended for best results!
+                              📸 Camera mode recommended for best results! Please ensure you capture a leaf image.
                             </div>
                           )}
                           {isDragOver && (
                             <div className="text-sm text-green-600 dark:text-green-400 animate-pulse transition-colors">
-                              ✨ Release to upload your soil image
+                              ✨ Release to upload your leaf image
                             </div>
                           )}
                         </div>

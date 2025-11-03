@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import ThemeToggle from "../components/ThemeToggle";
+import API_URL from "../config/api";
 
 const FertilizerInsights = () => {
   const [soilType, setSoilType] = useState("");
@@ -60,7 +62,7 @@ const FertilizerInsights = () => {
 
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/fertilizer-recommendation', {
+      const response = await fetch(`${API_URL}/api/fertilizer-recommendation`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

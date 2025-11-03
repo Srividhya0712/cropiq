@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import API_URL from '../config/api';
 
 // Agriculture-themed SVG Icons
 const EmailIcon = ({ className }) => (
@@ -107,7 +108,7 @@ const Register = () => {
     setIsLoading(true);
 
     try {
-      const res = await fetch('http://localhost:5000/api/register', {
+      const res = await fetch(`${API_URL}/api/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

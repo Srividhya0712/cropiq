@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import ThemeToggle from "../components/ThemeToggle";
+import API_URL from "../config/api";
 
 function DiseaseDetection() {
   const [image, setImage] = useState(null);
@@ -44,19 +45,16 @@ function DiseaseDetection() {
       const formData = new FormData();
       formData.append("leaf", image);
 
-      const response = await fetch("http://localhost:5000/api/detect-disease", {
+      const response = await fetch(`${API_URL}/api/detect-disease`, {
         method: "POST",
         body: formData,
       });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
       const data = await response.json();
       
-      if (data.error) {
-        throw new Error(data.error);
+      // Check for error response (e.g., "Please upload only plant images")
+      if (!response.ok || data.error) {
+        throw new Error(data.error || "Please upload only plant images");
       }
 
       setResult(data);
